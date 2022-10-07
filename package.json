@@ -1,0 +1,19 @@
+{
+  "name": "pricing-component-with-toggle-master",
+  "version": "1.0.0",
+  "description": "frontendmentor project",
+  "main": "index.js",
+  "author": "veglez",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "eslint": "^8.24.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "live-server": "^1.2.2",
+    "prettier": "^2.7.1"
+  },
+  "scripts": {
+    "start": "live-server src/"
+  }
+}
