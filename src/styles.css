@@ -29,9 +29,9 @@ html {
   padding: 24px;
   background-color: var(--very-light-grayish-blue);
   background-image: url("./static/images/bg-top.svg");
-  background-position: top right;
+  background-position: right calc(196px - 472px) top -139px;
   background-repeat: no-repeat;
-  background-origin: border-box;
+  background-size: 472px 760px;
 }
 
 .header {
@@ -67,6 +67,10 @@ html {
     var(--gradient-linear-initial),
     var(--gradient-linear-end)
   );
+}
+
+.switch:hover {
+  opacity: 0.5;
 }
 
 .switch > span {
@@ -105,6 +109,7 @@ html {
 .card {
   display: flex;
   flex-direction: column;
+  height: 453px;
   /* paralelo al eje */
   /* justify-content: center; */
   /* perpendicular al eje */
@@ -154,7 +159,7 @@ html {
     var(--gradient-linear-end)
   );
   text-transform: uppercase;
-  border: none;
+  border: 1px solid transparent;
   color: white;
   padding: 14px 82px;
   border-radius: 6px;
@@ -162,6 +167,12 @@ html {
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 1.39px;
+}
+
+.card .button:hover {
+  color: var(--gradient-linear-end);
+  border: 1px solid var(--gradient-linear-end);
+  background: white;
 }
 
 .card.selected {
@@ -183,5 +194,41 @@ html {
 
 .card.selected .button {
   color: var(--gradient-linear-end);
+  border: 1px solid transparent;
   background: white;
+}
+
+.card.selected .button:hover {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+}
+
+@media screen and (min-width: 1440px) {
+  .prices {
+    flex-direction: row;
+    gap: 0;
+    align-items: center;
+  }
+
+  .card.selected {
+    height: 501px;
+  }
+
+  .container {
+    min-height: 100vh;
+    background-image: url("./static/images/bg-top.svg"),
+      url("./static/images/bg-bottom.svg");
+    background-position: right -98px top -103px, left bottom;
+    background-size: 472px 760px, 351px 303px;
+    gap: 64px;
+  }
+
+  .header {
+    align-self: flex-end;
+  }
+
+  .prices {
+    align-self: baseline;
+  }
 }
